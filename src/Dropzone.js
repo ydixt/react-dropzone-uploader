@@ -344,6 +344,7 @@ class Dropzone extends React.Component {
       styles,
       addClassNames,
       InputComponent,
+      uploading,
       PreviewComponent,
       SubmitButtonComponent,
       LayoutComponent,
@@ -431,6 +432,7 @@ class Dropzone extends React.Component {
           onFiles={this.handleFiles} // see: https://stackoverflow.com/questions/39484895
           files={files}
           extra={extra}
+          uploading={uploading}
         />
       ) : null
 
@@ -533,6 +535,8 @@ Dropzone.propTypes = {
   PreviewComponent: PropTypes.func,
   SubmitButtonComponent: PropTypes.func,
   LayoutComponent: PropTypes.func,
+
+  uploading: PropTypes.bool,
 }
 
 Dropzone.defaultProps = {
@@ -553,6 +557,7 @@ Dropzone.defaultProps = {
   classNames: {},
   styles: {},
   addClassNames: {},
+  uploading: false,
 }
 
 export default Dropzone
